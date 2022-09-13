@@ -1,5 +1,6 @@
 const Router = require('express');
-const example = require('./example');
+const skillsRoute = require('./skillsRoute');
+const interviewsRoute = require('./interviewsRoute');
 
 const router = Router();
 
@@ -13,7 +14,8 @@ router.get('/', (req, res) => {
   res.status(200).json({message: 'api router online'});
 });
 
-router.use('/example', example);
+router.use('/skills', skillsRoute);
+router.use('/interviews', interviewsRoute);
 
 router.use((req, res) => {
   console.log(`server/routes/api.js: handler not found for request ${req.method} ${req.url}`);
