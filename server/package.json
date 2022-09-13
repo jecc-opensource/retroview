@@ -1,0 +1,24 @@
+{
+  "name": "retroview-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "dev": "npx nodemon node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jecc-opensource/retroview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jecc-opensource/retroview/issues"
+  },
+  "homepage": "https://github.com/jecc-opensource/retroview#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
