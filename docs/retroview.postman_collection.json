@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "5f2e3957-a2ab-474d-9c40-50f85f4f2274",
+		"name": "retroview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22319279"
+	},
+	"item": [
+		{
+			"name": "PUT /api/interviews",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"job_title\": \"Sr Whatever\",\n    \"company\": \"Local Devs Inc\",\n    \"tech_stack\": [\"jest\", \"supertest\"],\n    \"interview_date\": \"1902-08-13T22:46:30.470Z\",\n    \"resume_version\": \"My-best-resume.docx\",\n    \"interest_level\": 3,\n    \"questions\": [\"what?\", \"where?\", \"why?\", \"how?\"],\n    \"notes\": \"doggo-ipsum-what-now\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/interviews/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"interviews",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/interviews",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/interviews/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"interviews",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/skills",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/skills/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"skills",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /api/skills",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"linux\",\n    \"question_prompt\": \"do you command line?\",\n    \"answer\": \"nope, not at all\",\n    \"confidence\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/skills/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"skills",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

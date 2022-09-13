@@ -2,6 +2,7 @@
 // const path = require('path');
 // const fs = require('fs');
 
+// eslint-disable-next-line max-len
 // const MONGO_URI = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../secrets.json'))).MONGO_URI;
 
 // mongoose.connect(MONGO_URI, {
@@ -13,7 +14,6 @@
 // })
 //   .then(() => console.log('Connected to Mongo DB.'))
 //   .catch(err => console.log(err));
-
 
 // const Schema = mongoose.Schema;
 
