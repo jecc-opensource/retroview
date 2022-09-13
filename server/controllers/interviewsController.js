@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const db = require('../models/fakeDbModel');
 const { createErr } = require('../utils/utils');
 
@@ -13,7 +14,7 @@ interviewsController.getAllInterviews = async (req, res, next) => {
         method: 'getAllInterviews',
         type: 'db query error',
         err,
-      })
+      }),
     );
   }
 
@@ -21,9 +22,10 @@ interviewsController.getAllInterviews = async (req, res, next) => {
 };
 
 interviewsController.createInterview = async (req, res, next) => {
-  console.log(req.body);
   const required = ['job_title', 'company'];
-  const { interview_date = new Date(), job_title, company = '', tech_stack = [], resume_version = '', interest_level = 1, questions = [], notes = '' } = req.body;
+  const {
+    interview_date = new Date(), job_title, company = '', tech_stack = [], resume_version = '', interest_level = 1, questions = [], notes = '',
+  } = req.body;
 
   if (required.some((key) => req.body[key] === undefined)) {
     return next(
@@ -31,23 +33,23 @@ interviewsController.createInterview = async (req, res, next) => {
         method: 'createInterview',
         type: 'data validation error',
         err: 'request body did not include all required fields',
-      })
+      }),
     );
   }
 
   if (
-    typeof job_title !== 'string' ||
-    typeof company !== 'string' ||
-    typeof resume_version !== 'string' ||
-    typeof notes !== 'string' ||
-    typeof interest_level !== 'number'
+    typeof job_title !== 'string'
+    || typeof company !== 'string'
+    || typeof resume_version !== 'string'
+    || typeof notes !== 'string'
+    || typeof interest_level !== 'number'
   ) {
     return next(
       createErr({
         method: 'createInterview',
         type: 'data validation error',
         err: 'request body contained invalid data',
-      })
+      }),
     );
   }
 
@@ -69,7 +71,7 @@ interviewsController.createInterview = async (req, res, next) => {
         method: 'createInterview',
         type: 'db insert error',
         err,
-      })
+      }),
     );
   }
 

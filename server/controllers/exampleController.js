@@ -7,7 +7,7 @@ const exampleController = {};
 exampleController.getAllExamples = async (req, res, next) => {
   try {
     // const dbRes = await Example.find({});
-    dbRes = { fakeResult: null }
+    const dbRes = { fakeResult: null };
     res.locals.examples = dbRes;
   } catch (err) {
     return next(
@@ -15,7 +15,7 @@ exampleController.getAllExamples = async (req, res, next) => {
         method: 'getAllExamples',
         type: 'db query error',
         err,
-      })
+      }),
     );
   }
 
@@ -33,27 +33,27 @@ exampleController.createExample = async (req, res, next) => {
         method: 'createExample',
         type: 'data validation error',
         err: 'request body did not include all required fields',
-      })
+      }),
     );
   }
 
   if (
-    typeof userName !== 'string' ||
-    typeof exampleTitle !== 'string' ||
-    typeof exampleText !== 'string'
+    typeof userName !== 'string'
+    || typeof exampleTitle !== 'string'
+    || typeof exampleText !== 'string'
   ) {
     return next(
       createErr({
         method: 'createExample',
         type: 'data validation error',
         err: 'request body did contained invalid data',
-      })
+      }),
     );
   }
 
   try {
     // const dbRes = await Example.create({ userName, exampleTitle, exampleText });
-    dbRes = { fakeResult: null }
+    const dbRes = { fakeResult: null };
     res.locals.newExample = dbRes;
   } catch (err) {
     return next(
@@ -61,7 +61,7 @@ exampleController.createExample = async (req, res, next) => {
         method: 'createExample',
         type: 'db insert error',
         err,
-      })
+      }),
     );
   }
 

@@ -1,4 +1,4 @@
-const {basename} = require('path')
+const { basename } = require('path');
 
 const utils = {
   createErr: (errInfo) => {

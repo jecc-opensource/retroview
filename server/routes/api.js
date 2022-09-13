@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const Router = require('express');
 const skillsRoute = require('./skillsRoute');
 const interviewsRoute = require('./interviewsRoute');
@@ -11,7 +12,7 @@ router.use((req, res, next) => {
 
 router.get('/', (req, res) => {
   console.log(`server/routes/api.js.router.get('/'): received request ${req.method} ${req.url}`);
-  res.status(200).json({message: 'api router online'});
+  res.status(200).json({ message: 'api router online' });
 });
 
 router.use('/skills', skillsRoute);
