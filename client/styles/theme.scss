@@ -1,0 +1,15 @@
+$primary: #FA9052;
+$skill-dark: #4BAD75;
+$skill-dark-text: darken($skill-dark, 20%);
+$skill-light: #5FFAA2;
+$skill-light-text: lighten(#5FFAA2, 20%);
+$int-dark: #2868AD;
+$int-light: #469DFA;
+$bg-white: white;
+$bg-light: darken($bg-white, 5%);
+$bg-lighter: darken($bg-white, 2%);
+$bg-black: lighten(black, 30%);
+$bg-dark: lighten(black, 50%);
+
+$thin-border: 2px;
+$thick-border: 4px;
