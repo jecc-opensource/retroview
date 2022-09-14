@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateName } from '../redux/slices/skillSlice';
 import { updateCompany } from '../redux/slices/interviewSlice';
 
+import InterviewBox from '../components/InterviewBox/InterviewBox';
 
 export default function UIDemo() {
   const skillList = useSelector((state) => state.skill.skillList);
@@ -44,6 +45,13 @@ export default function UIDemo() {
       {/* {JSON.stringify(skillList[0])} */}
       {skillBoxList}
       {JSON.stringify(interviewList[0])}
+      <SkillBox label="Next.js" href="http://nextjs.org" confidence={low} />
+      <SkillBox label="Redux" href="/skills/redux" confidence={medium} />
+      <SkillBox label="React" confidence={high} />
+      <hr/>
+      <InterviewBox label="Google" href="http://google.com" confidence={low} />
+      <InterviewBox label="International Consortium of Coders" confidence={medium} />
+      <InterviewBox label="CapitalOne" href="/interviews/capitalone" confidence={high} />
 
     </div>
   );

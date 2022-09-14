@@ -22,14 +22,14 @@ $box-width: 1.1618 * $box-height;
 }
 
 .high {
-  background-color: $skill-dark;
-  color: $skill-light-text;
+  background-color: $interview-dark;
+  color: $interview-light-text;
   @extend .box;
 }
 
 .medium {
-  background-color: $skill-light;
-  color: $skill-dark-text;
+  background-color: $interview-light;
+  color: $interview-dark-text;
   @extend .box;
 }
 
