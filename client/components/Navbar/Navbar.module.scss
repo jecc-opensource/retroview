@@ -1,0 +1,8 @@
+@import '../../styles/theme.scss';
+
+.navbar {
+  display: flex;
+  background-color: $int-dark;
+  padding-left: 1%;
+  padding-right: 1%;
+}

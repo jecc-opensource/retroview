@@ -1,15 +1,20 @@
+import SkillBox from "../components/SkillBox/SkillBox";
+import styles from '../styles/Home.module.scss';
+
 const Skills = () => {
-  const skillsArray = ['React', 'Express', 'Jest', 'React Testing Library', 'SQL', 'NoSQL'];
+  const skillsArray = ['React', 'Express', 'Jest', 'React Testing Library', 'SQL', 'NoSQL', 'Skill1', 'Skill2', 'skill3'];
   const newArr = skillsArray.map((skill) => {
-    return <button>{skill}</button>
+    return <SkillBox key={skill} label={skill} confidence={2}></SkillBox>
   })
 
   return (
     <>
-    <div>Here are a list of your skills!</div>
+    <h1 className={styles.title}>Skills</h1>
     <button>Add a skill</button>
     <br></br>
-    {newArr}
+    <div className={styles.skillsContainer}>
+        {newArr}
+    </div>
     </>
   )
 }

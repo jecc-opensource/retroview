@@ -1,10 +1,11 @@
-import styles from '../styles/Home.module.css';
+import Link from 'next/link';
+import styles from './Navbar.module.scss'
 
 const Navbar = () => {
   return (
     <nav>
-      <div>
-        <h1>Retroview</h1>
+      <div className={styles.navbar}>
+        <Link href='/'><a><h1>Retroview</h1></a></Link>
       </div>
     </nav>
   )

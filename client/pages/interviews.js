@@ -1,15 +1,20 @@
+import Card from "../components/Card/Card";
+import styles from "../styles/Home.module.scss";
+
 const Interviews = () => {
   const interviewArray = ['Spotify', 'Meta', 'Amazon', 'Discord', 'Netflix'];
   const newArr = interviewArray.map((interview) => {
-    return <button>{interview}</button>
+    return <Card key={interview} title={interview}></Card>
   })
 
   return (
     <>
-    <div>Here are the list of interviews</div>
+    <h1 className={styles.title}>Interviews</h1>
     <button>Add Interview</button>
     <br></br>
-    {newArr}
+    <div className={styles.interviewContainer}>
+      {newArr}
+    </div>
     </>
   )
 }
