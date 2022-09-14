@@ -1,8 +1,8 @@
-import styles from './SkillBox.module.scss';
+import styles from './InterviewBox.module.scss';
 import cn from 'classnames';
 import Link from 'next/link';
 
-const SkillBox = ({ label, confidence, href = '/' }) => {
+const InterviewBox = ({ label, confidence, href = '/' }) => {
   return (
     <Link href={href}>
       <button
@@ -18,4 +18,4 @@ const SkillBox = ({ label, confidence, href = '/' }) => {
   );
 };
 
-export default SkillBox;
+export default InterviewBox;
