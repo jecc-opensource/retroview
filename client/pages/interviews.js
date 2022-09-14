@@ -1,11 +1,11 @@
-import SkillBox from "../components/SkillBox/SkillBox";
+import InterviewBox from "../components/InterviewBox/InterviewBox";
 import styles from "../styles/Home.module.scss";
 import Card from '../components/Card/Card';
 
 const Interviews = () => {
   const interviewArray = ['Spotify', 'Meta', 'Amazon', 'Discord', 'Netflix'];
   const newArr = interviewArray.map((interview) => {
-    return <SkillBox key={interview} label={interview}></SkillBox>
+    return <InterviewBox key={interview} label={interview} confidence={2}></InterviewBox>
   })
 
   const handleClick = (e) => {
