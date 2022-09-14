@@ -48,7 +48,12 @@ interviewDB.run(sql, [
 let sqlSkill = `INSERT INTO skills(name, question_prompt, answer, confidence) VALUES (?,?,?,?)`;
 const skillArray = ['React', 'Why would you use React?', 'Make reusable JSX components', '1']
 
-interviewDB.run(sqlSkill, skillArray)
+interviewDB.run(sqlSkill, [
+  'React',
+  'Why would you use React?',
+  'Make reusable JSX components',
+  '1',
+]);
 
 const allInterviews = `SELECT * FROM interviews`
 const allSkills = `SELECT * FROM skills`;
