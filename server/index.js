@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
 const api = require('./routes/api');
 
-const PORT = process.env.EXPRESS_PORT || 3000;
+const PORT = process.env.EXPRESS_PORT || 3001;
 const app = express();
 
 app.use(express.json());
@@ -31,12 +32,13 @@ app.use((req, res) => {
   res
     .status(404)
     .send(
-      'Page not found'
+      'Page not found',
     );
 });
 
 // Global error handler
-app.use((err, req, res, next) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, _req, res, _next) => {
   const defaultErr = {
     message: { err: 'An error occurred' },
     log: 'Express error handler caught unknown middleware error',

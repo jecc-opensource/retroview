@@ -1,10 +1,9 @@
 const path = require('path');
-const { ensureDirSync } = require( 'fs-extra');
+const { ensureDirSync } = require('fs-extra');
 
 function makeDatabaseDir() {
   try {
     ensureDirSync(path.resolve(__dirname, '../../database/'));
-  
   } catch (err) {
     console.log(err);
   }
