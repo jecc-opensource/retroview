@@ -1,0 +1,32 @@
+@import '../../styles/theme.scss';
+
+$box-height: 130px;
+$box-width: 1.1618 * $box-height;
+
+.box {
+  display: flex;
+  height: $box-height;
+  width: $box-width;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+.high {
+  background-color: $skill-dark;
+  color: $skill-light-text;
+  @extend .box;
+}
+
+.medium {
+  background-color: $skill-light;
+  color: $skill-dark-text;
+  @extend .box;
+}
+
+.low {
+  background-color: $bg-light;
+  color: $bg-dark;
+  @extend .box;
+}
