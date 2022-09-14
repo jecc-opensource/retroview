@@ -36,7 +36,7 @@ CREATE TABLE skills(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, qu
 
 //assocative entity or join table
 interviewDB.run(
-  `CREATE TABLE interToSkill (interview_id INTEGER NOT NULL, skill_id INTEGER NOT NULL, PRIMARY KEY(interview_id, skill_id) )`
+  `CREATE TABLE interToSkill(interview_id INTEGER NOT NULL, skill_id INTEGER NOT NULL, PRIMARY KEY(interview_id, skill_id) )`
 );
  
 }
@@ -65,7 +65,7 @@ interviewDB.run(sqlSkill, [
   '1',
 ]);
 
-let joinInsert = `INSERT INTO interToSkill(skill_id,interview_id) VALUES(?,?)`
+let joinInsert = `INSERT INTO interToSkill(skill_id,interview_id) VALUES(?,?)`;
 
 interviewDB.run(joinInsert, [1,1])
 
