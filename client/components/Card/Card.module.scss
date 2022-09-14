@@ -1,0 +1,28 @@
+@import '../../styles/theme.scss';
+
+.card {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  background-color: $bg-white;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: rgba($bg-dark, 0.48) 6px 2px 16px 0px, rgba($bg-dark, 0.8) -6px -2px 16px 0px;
+}
+
+.cardHeader {
+  border-bottom: $thin-border solid $bg-dark;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: $bg-dark;
+  font-weight: bold;
+  font-size: x-large;
+  padding: 1rem;
+}
+
+.cardBody {
+  padding: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
