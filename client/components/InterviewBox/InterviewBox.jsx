@@ -3,6 +3,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 
 const InterviewBox = ({ label, confidence, href = '/' }) => {
+  
   return (
     <Link href={href}>
       <button
