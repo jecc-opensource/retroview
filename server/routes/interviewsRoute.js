@@ -22,7 +22,7 @@ router.get(
   },
 );
 
-router.get(
+router.post(
   '/:id/links',
   (req, res, next) => {
     console.log(`server/routes/interviewsRouter.js.router.get('/:id/links'): received request ${req.method} ${req.url}`);
@@ -34,10 +34,10 @@ router.get(
   },
 );
 
-router.put(
+router.post(
   '/:id/links',
   (req, res, next) => {
-    console.log(`server/routes/interviewsRouter.js.router.put('/:id/links'): received request ${req.method} ${req.url}`);
+    console.log(`server/routes/interviewsRouter.js.router.post('/:id/links'): received request ${req.method} ${req.url}`);
     next();
   },
   linksController.create,
@@ -58,15 +58,39 @@ router.delete(
   },
 );
 
-router.put(
+router.post(
   '/',
   (req, res, next) => {
-    console.log(`server/routes/interviewsRouter.js.router.put('/'): received request ${req.method} ${req.url}`);
+    console.log(`server/routes/interviewsRouter.js.router.post('/'): received request ${req.method} ${req.url}`);
     next();
   },
   interviewsController.createInterview,
   (req, res) => {
     res.status(200).json(res.locals.newInterview);
+  },
+);
+
+router.put(
+  '/:id',
+  (req, res, next) => {
+    console.log(`server/routes/interviewsRouter.js.router.put('/'): received request ${req.method} ${req.url}`);
+    next();
+  },
+  interviewsController.updateInterview,
+  (req, res) => {
+    res.status(200).json(res.locals.updatedInterview);
+  },
+);
+
+router.delete(
+  '/:id',
+  (req, res, next) => {
+    console.log(`server/routes/interviewsRouter.js.router.delete('/:id'): received request ${req.method} ${req.url}`);
+    next();
+  },
+  interviewsController.deleteInterviewById,
+  (req, res) => {
+    res.status(200).json(res.locals.deletedInterview);
   },
 );
 

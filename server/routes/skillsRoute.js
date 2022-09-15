@@ -34,10 +34,10 @@ router.get(
   },
 );
 
-router.put(
+router.post(
   '/:id/links',
   (req, res, next) => {
-    console.log(`server/routes/skillsRouter.js.router.put('/:id/links'): received request ${req.method} ${req.url}`);
+    console.log(`server/routes/skillsRouter.js.router.post('/:id/links'): received request ${req.method} ${req.url}`);
     next();
   },
   linksController.create,
@@ -58,15 +58,39 @@ router.delete(
   },
 );
 
-router.put(
+router.post(
   '/',
   (req, res, next) => {
-    console.log(`server/routes/skillsRouter.js.router.put('/'): received request ${req.method} ${req.url}`);
+    console.log(`server/routes/skillsRouter.js.router.post('/'): received request ${req.method} ${req.url}`);
     next();
   },
   skillsController.createSkill,
   (req, res) => {
     res.status(200).json(res.locals.newSkill);
+  },
+);
+
+router.put(
+  '/:id',
+  (req, res, next) => {
+    console.log(`server/routes/skillsRouter.js.router.put('/:id'): received request ${req.method} ${req.url}`);
+    next();
+  },
+  skillsController.updateSkill,
+  (req, res) => {
+    res.status(200).json(res.locals.newSkill);
+  },
+);
+
+router.delete(
+  '/:id',
+  (req, res, next) => {
+    console.log(`server/routes/skillsRouter.js.router.delete('/:id'): received request ${req.method} ${req.url}`);
+    next();
+  },
+  skillsController.deleteSkillById,
+  (req, res) => {
+    res.status(200).json(res.locals.deletedSkill);
   },
 );
 
