@@ -12,6 +12,7 @@ const initialState = {
   },
   skillsLinked: [],
   modalInterview: null,
+  addInterviewModal: false,
   interviewList: [
     {
       id: 1,
@@ -83,7 +84,7 @@ export const interviewSlice = createSlice({
     },
     //add new tech into array
     addTech: (state, action) => {
-      state.newInterview.techStack.push(action.payload)
+      state.newInterview.tech_stack.push(action.payload)
     },
     //update verion from user entry
     resumeVersion: (state, action) => {
@@ -106,10 +107,13 @@ export const interviewSlice = createSlice({
     },
     setSkillsLinked: (state, action) => {
       state.skillsLinked = action.payload;
+    },
+    setInterviewModal: (state, action) => {
+      state.addInterviewModal = action.payload
     }
   }
 })
 
 
-export const {updateTitle, updateCompany, addTech, resumeVersion, interestLevel, addQuestion, updateNotes, renderModal, setSkillsLinked} = interviewSlice.actions;
+export const {updateTitle, updateCompany, addTech, resumeVersion, interestLevel, addQuestion, updateNotes, renderModal, setSkillsLinked, setInterviewModal} = interviewSlice.actions;
 export default interviewSlice.reducer;

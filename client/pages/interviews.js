@@ -2,14 +2,16 @@ import InterviewBox from "../components/InterviewBox/InterviewBox";
 import styles from "../styles/Home.module.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import InterviewModal from "../components/InterviewModal/InterviewModal";
-import { renderModal } from "../redux/slices/interviewSlice";
+import { renderModal, setInterviewModal } from '../redux/slices/interviewSlice';
 import { useEffect,useState } from 'react';
 import InputInterviewModal from "../components/InputInterviewModal/InputInterviewModal"
-
+import buttonStyles from '../components/Buttons/Button.module.scss';
+// import {setInterviewModal }from '../redux/slices/interviewSlice'
 const Interviews = () => {
   const dispatch = useDispatch();
   const interviewList = useSelector((state) => state.interview.interviewList);
   const modalInterview = useSelector((state) => state.interview.modalInterview);
+  const addInterviewModal = useSelector((state) => state.interview.addInterviewModal);
   const newArr = interviewList.map((interview, index) => {
     return (
       <InterviewBox 
@@ -40,7 +42,15 @@ const Interviews = () => {
       <br></br>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div className={styles.interviewContainer}>{newArr}</div>
-        <InputInterviewModal />
+        <div className={buttonStyles.centered}>
+          <button
+            className={buttonStyles.addInterview}
+            onClick={() => dispatch(setInterviewModal(true))}
+          >
+            Add Interview +
+          </button>
+        </div>
+        {addInterviewModal && <InputInterviewModal />}
       </div>
       {modalInterview && <InterviewModal interviewId={modalInterview} />}
     </>

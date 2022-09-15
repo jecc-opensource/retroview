@@ -41,6 +41,11 @@
   color: $primary;
   border-radius: 0.5rem;
   background-color: $bg-white;
+  width: 4em;
+ display: flex;
+align-self: flex-end;
+justify-content: center;
+margin: 0px 1rem;
 }
 
 .modalClose:hover {
@@ -80,6 +85,7 @@
   width: 50%;
   align-self: center;
   text-align: center;
+  justify-content: center;
   
 }
 #low{

@@ -2,13 +2,13 @@ import SkillBox from '../components/SkillBox/SkillBox';
 import styles from '../styles/Home.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import SkillModal from '../components/SkillModal/SkillModal';
-import { renderModal } from '../redux/slices/skillSlice';
+import { renderModal, setSkillModal } from '../redux/slices/skillSlice';
 import AddSkillButton from '../components/Buttons/addSkillButton';
 import InputSkillModal from '../components/InputSkillModal/InputSkillModal';
 import { useEffect, useState } from 'react';
 import buttonStyles from '../components/Buttons/Button.module.scss'
 const Skills = () => {
-  const [addSkillModalStatus, setAddModal] = useState(false);
+const [addSkillModalStatus, setAddModal] = useState(false);
 const [database, setData] = useState([])
 
   const dispatch = useDispatch();

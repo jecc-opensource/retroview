@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import styles from './InputInterviewModal.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-
+import {setInterviewModal} from "../../redux/slices/interviewSlice"
 import {
   updateTitle,
   updateCompany,
@@ -13,15 +13,32 @@ import {
   renderModal,
   setSkillsLinked,
 } from '../../redux/slices/interviewSlice';
+
 const InputInterviewModal = () => {
-  const [modalStatus, setModalStatus] = useState(true)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const newInterview = useSelector((state)=> state.interview.newInterview)
+
+  const putRequest = () => {
+    const req = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'Application/JSON',
+      },
+      body: JSON.stringify({ ...newInterview }),
+    };
+    fetch('/api/interviews', req)
+    .then(res => res.json())
+    .then(data=> console.log(data))
+  }
+
   return (
     <div>
       <form action='' className={styles.modalBox}>
         <button
           className={styles.modalClose}
-          onClick={() => setModalStatus(!modalStatus)}
+          onClick={() => {
+            dispatch(setInterviewModal(false));
+          }}
         >
           &times;
         </button>
@@ -46,7 +63,7 @@ const InputInterviewModal = () => {
           id='job_title'
           type='text'
           className={styles.input}
-          placeholder='Job Title...'
+          placeholder='Software Engineer...'
           onChange={(e) => dispatch(updateTitle(e.target.value))}
         />
         <br />
@@ -56,6 +73,7 @@ const InputInterviewModal = () => {
             href='https://stackshare.io/'
             target='_blank'
             className={styles.link}
+            rel='noreferrer'
           >
             not sure CHECK HERE!
           </a>
@@ -135,7 +153,11 @@ const InputInterviewModal = () => {
           placeholder='The interviewer went to the same alma mater...'
           onChange={(e) => dispatch(updateNotes(e.target.value))}
         />
-        <button type='submit' className={styles.save}>
+        <button
+          type='submit'
+          className={styles.save}
+          onClick={() => putRequest()}
+        >
           {' '}
           Save{' '}
         </button>

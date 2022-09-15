@@ -79,10 +79,12 @@ export const skillSlice = createSlice({
     },
     setInterviewsLinked: (state, action) => {
       state.interviewsLinked = action.payload;
+    },
+    setSkillModal: (state, action) => {
+      state.addSkillModal = action.payload
     }
-    setSkillModal
   }
 })
 
-export const {updateName, addQuestion, addAnswer, updateConfidence, renderModal, setInterviewsLinked} = skillSlice.actions;
+export const {updateName, addQuestion, addAnswer, updateConfidence, renderModal, setInterviewsLinked, setSkillModal} = skillSlice.actions;
 export default skillSlice.reducer;
