@@ -1,25 +1,33 @@
 import InterviewBox from "../components/InterviewBox/InterviewBox";
 import styles from "../styles/Home.module.scss";
-import Card from '../components/Card/Card';
+import { useSelector, useDispatch } from 'react-redux';
+import InterviewModal from "../components/InterviewModal/InterviewModal";
+import { renderModal } from "../redux/slices/interviewSlice";
 
 const Interviews = () => {
-  const interviewArray = ['Spotify', 'Meta', 'Amazon', 'Discord', 'Netflix'];
-  const newArr = interviewArray.map((interview) => {
-    return <InterviewBox key={interview} label={interview} confidence={2}></InterviewBox>
+  const dispatch = useDispatch();
+  const interviewList = useSelector((state) => state.interview.interviewList);
+  const modalInterview = useSelector((state) => state.interview.modalInterview);
+  const newArr = interviewList.map((interview, index) => {
+    return (
+      <InterviewBox 
+        label={interview.company} 
+        confidence={interview.interest_level}
+        key={`interviewBox-${index}`} 
+        onClick={() => dispatch(renderModal(interview.id))}
+      />
+    )
   })
-
-  const handleClick = (e) => {
-    console.log('clicked')
-  }
 
   return (
     <>
     <h1 className={styles.title}>Interviews</h1>
-    <button onClick={handleClick}>Add Interview</button>
+    <button>Add Interview</button>
     <br></br>
     <div className={styles.interviewContainer}>
       {newArr}
     </div>
+    { modalInterview && <InterviewModal interviewId={modalInterview}/>}
     </>
   )
 }

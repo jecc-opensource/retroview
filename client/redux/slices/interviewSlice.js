@@ -98,10 +98,13 @@ export const interviewSlice = createSlice({
     //update notes related to question
     updateNotes: (state, action) => {
       state.newInterview.notes = action.payload;
+    },
+    renderModal: (state, action) => {
+      state.modalInterview = action.payload;
     }
   }
 })
 
 
-export const {updateTitle, updateCompany, addTech, resumeVersion, interestLevel, addQuestion, updateNotes} = interviewSlice.actions;
+export const {updateTitle, updateCompany, addTech, resumeVersion, interestLevel, addQuestion, updateNotes, renderModal} = interviewSlice.actions;
 export default interviewSlice.reducer;
