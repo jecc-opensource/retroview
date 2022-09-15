@@ -3,6 +3,24 @@
 .navbar {
   display: flex;
   background-color: $interview-dark-text;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.navbarItem:hover{
+  cursor: pointer;
+}
+
+.navItemTitle {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.navItemTitle:hover{
+  color: $bg-dark;
+}
+
+.right {
+  display: flex;
+  margin-left: auto;
 }
