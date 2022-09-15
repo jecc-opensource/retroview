@@ -10,6 +10,8 @@ const initialState = {
     questions:['Do you know what you are doing?'],
     notes: 'I think I totally bombed that one'
   },
+  skillsLinked: [],
+  modalInterview: null,
   interviewList: [
     {
       id: 1,
@@ -101,10 +103,13 @@ export const interviewSlice = createSlice({
     },
     renderModal: (state, action) => {
       state.modalInterview = action.payload;
+    },
+    setSkillsLinked: (state, action) => {
+      state.skillsLinked = action.payload;
     }
   }
 })
 
 
-export const {updateTitle, updateCompany, addTech, resumeVersion, interestLevel, addQuestion, updateNotes, renderModal} = interviewSlice.actions;
+export const {updateTitle, updateCompany, addTech, resumeVersion, interestLevel, addQuestion, updateNotes, renderModal, setSkillsLinked} = interviewSlice.actions;
 export default interviewSlice.reducer;
