@@ -14,20 +14,38 @@ graph TD;
 
 ## Node.js Server
 ```mermaid
-graph TD;
+graph LR;
   E["Express.js"] --> RA{"API Router"};
   RA --> RI{"Interviews Router"};
   RA --> RS{"Skills Router"};
+  subgraph "Skills Controller";
   RS --> SC[["Create Skill"]];
   RS --> SD[["Delete Skill By ID"]];
   RS --> SU[["Update Skill By ID"]];
   RS --> SG[["Get Skill By ID"]];
   RS --> SGA[["Get All Skills"]];
+  end;
+  subgraph "Interviews Controller";
   RI --> IC[["Create Interview"]];
   RI --> ID[["Delete Interview By ID"]];
   RI --> IU[["Update Interview By ID"]];
   RI --> IG[["Get Interview By ID"]];
   RI --> IGA[["Get All Interviews"]];
+  end;
+  subgraph "Link Controller";
+  RI --> LC[["Link Interview to Skill By ID"]];
+  RI --> LD[["Unlink Interview from Skill By ID"]];
+  RI --> LGA[["Get All Linked Skills by Interview ID"]];
+  RS --> LCS[["Link Skill to Interview By ID"]];
+  RS --> LDS[["Unlink Skill from Interview By ID"]];
+  RS --> LGAS[["Get All Linked Interviews by Skill ID"]];
+  end;
+  LC --> LM("Link Model");
+  LD --> LM;
+  LGA --> LM;
+  LCS --> LM;
+  LDS --> LM;
+  LGAS --> LM;
   IC --> IM("Interview Model");
   ID --> IM("Interview Model");
   IU --> IM("Interview Model");
@@ -40,6 +58,7 @@ graph TD;
   SGA --> SM
   SM --> D(("Database"));
   IM --> D;
+  LM -->D;
 ```
 
 
