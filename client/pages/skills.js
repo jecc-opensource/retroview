@@ -4,7 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import SkillModal from '../components/SkillModal/SkillModal';
 import { renderModal } from '../redux/slices/skillSlice';
 import AddSkillButton from '../components/Buttons/addSkillButton';
+import InputSkillModal from '../components/InputSkillModal/InputSkillModal';
 import { useEffect, useState } from 'react';
+import buttonStyles from '../components/Buttons/Button.module.scss'
 const Skills = () => {
   const [addSkillModalStatus, setAddModal] = useState(false);
 const [database, setData] = useState([])
@@ -60,9 +62,23 @@ fetch('/api/skills/', {
       <br />
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div className={styles.skillsContainer}>
-          {newArr} 
-          {databaseArray} <AddSkillButton onClick={() => setAddModal(!addSkillModalStatus)} />
+          {newArr}
+          {databaseArray}
+          <div className={buttonStyles.centered}>
+            <button
+              className={buttonStyles.addSkill}
+              onClick={() => {
+                console.log(addSkillModalStatus);
+                setAddModal(!addSkillModalStatus);
+              }}
+            >
+              {' '}
+              Add new skill +
+            </button>
+          </div>
         </div>
+
+        {addSkillModalStatus ? <InputSkillModal /> : null}
       </div>
       {modalSkill && <SkillModal skillId={modalSkill} />}
     </>
