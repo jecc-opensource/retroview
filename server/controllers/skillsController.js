@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-const db = require('../models/fakeDbModel');
 const { createErr } = require('../utils/utils');
 const Skill = require('../models/skillsModel');
 
