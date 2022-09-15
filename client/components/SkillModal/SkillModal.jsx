@@ -3,6 +3,7 @@ import Link from 'next/link';
 import cn from 'classnames';
 import styles from './SkillModal.module.scss';
 import { renderModal } from "../../redux/slices/skillSlice";
+import SkillLinksList from '../SkillLinksList/SkillLinksList';
 
 const SkillModal = ({ skillId }) => {
   const dispatch = useDispatch();
@@ -19,11 +20,13 @@ const SkillModal = ({ skillId }) => {
         </button>
       </div>
       <div className={styles.modalBody}>
-        Prompt: {skill.question_prompt}
+        <strong>Prompt: </strong>{skill.question_prompt}
         <br />
-        Confidence: {skill.confidence}
+        <strong>Confidence: </strong>{skill.confidence}
         <br />
-        Answer: {skill.answer}
+        <strong>Answer: </strong>{skill.answer}
+        <hr />
+        <SkillLinksList />
       </div>
     </div>
   );

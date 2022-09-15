@@ -1,6 +1,4 @@
 {
-  "eslint.workingDirectories": [
-    "client",
-    "server"
-  ]
+  "eslint.workingDirectories": ["client", "server"],
+  "docwriter.style": "DocBlock"
 }
