@@ -18,12 +18,13 @@ const SkillModal = ({ skillId }) => {
           &times;
         </button>
       </div>
-      <div className={styles.modalBody}></div>
-      Prompt: {skill.question_prompt}
-      <br />
-      Confidence: {skill.confidence}
-      <br />
-      Answer: {skill.answer}
+      <div className={styles.modalBody}>
+        Prompt: {skill.question_prompt}
+        <br />
+        Confidence: {skill.confidence}
+        <br />
+        Answer: {skill.answer}
+      </div>
     </div>
   );
 };
