@@ -3,6 +3,7 @@ import Link from 'next/link';
 import cn from 'classnames';
 import styles from './SkillModal.module.scss';
 import { renderModal } from "../../redux/slices/skillSlice";
+import SkillLinksList from '../SkillLinksList/SkillLinksList';
 
 const SkillModal = ({ skillId }) => {
   const dispatch = useDispatch();
@@ -24,6 +25,8 @@ const SkillModal = ({ skillId }) => {
         <strong>Confidence: </strong>{skill.confidence}
         <br />
         <strong>Answer: </strong>{skill.answer}
+        <hr />
+        <SkillLinksList />
       </div>
     </div>
   );
