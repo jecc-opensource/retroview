@@ -1,0 +1,79 @@
+@import '../../styles/theme.scss';
+
+.modalBox {
+  width: 60vw;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-white;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: rgba($bg-dark, 0.48) 6px 2px 16px 0px, rgba($bg-dark, 0.8) -6px -2px 16px 0px;
+}
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: $thin-border solid $bg-dark;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: $bg-dark;
+  font-weight: bold;
+  font-size: x-large;
+  padding: 1rem;
+ 
+}
+
+.modalTitle {
+  font-weight: bold;
+   text-align: center;
+}
+
+.modalClose {
+  font-weight: bold;
+  padding: 0.5rem;
+  border: $thin-border $primary solid;
+  color: $primary;
+  border-radius: 0.5rem;
+  background-color: $bg-white;
+}
+
+.modalClose:hover {
+  background-color: $primary;
+  color: $bg-white;
+}
+
+.modalBody {
+  padding: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.input{
+  padding: .7em;
+  width: 96%;
+  display: flex;
+  align-self: center;
+}
+.save{
+  width: 4em;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  margin:1em;
+  padding:.5em;
+}
+
+.radio{
+  padding:1em;
+  width: 1em;
+  transition: all .3s ease;
+}
+
+#low{
+  background-color:pink ;
+}

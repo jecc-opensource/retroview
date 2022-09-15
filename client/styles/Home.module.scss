@@ -67,8 +67,9 @@
 
 .interviewContainer {
   display: grid;
-  grid-template-columns: repeat(4, 15%);
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
   justify-content: center;
+  width: 80%;
 }
 
 .skillsContainer {
@@ -142,4 +143,10 @@ width: 80%;
   .logo img {
     filter: invert(1);
   }
+}
+
+.centered{
+  display: flex;
+  justify-content: center;
+
 }

@@ -36,13 +36,13 @@ const Interviews = () => {
 
   return (
     <>
-    <h1 className={styles.title}>Interviews</h1>
-    <button>Add Interview</button>
-    <br></br>
-    <div className={styles.interviewContainer}>
-      {newArr}
-    </div>
-    { modalInterview && <InterviewModal interviewId={modalInterview}/>}
+      <h1 className={styles.title}>Interviews</h1>
+      <button>Add Interview</button>
+      <br></br>
+      <div className={styles.centered}>
+        <div className={styles.interviewContainer}>{newArr}</div>
+      </div>
+      {modalInterview && <InterviewModal interviewId={modalInterview} />}
     </>
   );
 };
