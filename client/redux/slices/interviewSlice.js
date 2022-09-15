@@ -108,7 +108,7 @@ export const interviewSlice = createSlice({
       state.skillsLinked = action.payload;
     },
     addInterviewList: (state, action) => {
-      state.interviewList.push(action.payload)
+      state.interviewList.push = action.payload
     }
   }
 })
