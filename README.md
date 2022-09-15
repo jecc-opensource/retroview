@@ -53,6 +53,6 @@ graph TD;
   N2 --> LB2;
   LB2 --> A1[["Node.js API Server 1"]];
   LB2 --> A2[["Node.js API Server 2"]];
-  A1 --> |"SQL Query"| D("PostgreSQL DB");
-  A2 --> |"SQL Query"| D("PostgresQL DB");
+  A1 --> |"SQL Query"| D("Database Cluster");
+  A2 --> |"SQL Query"| D;
 ```
