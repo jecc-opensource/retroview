@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   modalSkill: null,
+  addSkillModal: false,
   interviewsLinked: [],
   newSkill: {
     name: 'Redux',
@@ -79,6 +80,7 @@ export const skillSlice = createSlice({
     setInterviewsLinked: (state, action) => {
       state.interviewsLinked = action.payload;
     }
+    setSkillModal
   }
 })
 

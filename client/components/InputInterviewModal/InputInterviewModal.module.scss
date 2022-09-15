@@ -4,7 +4,7 @@
   width: 60vw;
   position: absolute;
   left: 50%;
-  top: 35%;
+  top:65%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@
   padding: 1rem;
   box-shadow: rgba($bg-dark, 0.48) 6px 2px 16px 0px, rgba($bg-dark, 0.8) -6px -2px 16px 0px;
   text-align: center;
+  margin-bottom: 1em;
 }
 .modalHeader {
   display: flex;
@@ -74,7 +75,18 @@
   width: 1em;
   transition: all .3s ease;
 }
-
+.radioInputs{
+  display:flex;
+  width: 50%;
+  align-self: center;
+  text-align: center;
+  
+}
 #low{
   background-color:pink ;
+}
+.link{
+  color:blue;
+  text-decoration: underline;
+  
 }

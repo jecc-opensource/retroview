@@ -37,12 +37,11 @@ const Interviews = () => {
   return (
     <>
       <h1 className={styles.title}>Interviews</h1>
-      <button>Add Interview</button>
       <br></br>
-      <div className={styles.centered}>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <div className={styles.interviewContainer}>{newArr}</div>
+        <InputInterviewModal />
       </div>
-      <InputInterviewModal/>
       {modalInterview && <InterviewModal interviewId={modalInterview} />}
     </>
   );
