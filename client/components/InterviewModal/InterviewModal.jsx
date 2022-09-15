@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './InterviewModal.module.scss';
 import { renderModal } from "../../redux/slices/interviewSlice";
+import InterviewLinkList from '../InterviewLinksList/InterviewLinksList';
 
 const InterviewModal = ({ interviewId }) => {
   const dispatch = useDispatch();
@@ -27,6 +28,8 @@ const InterviewModal = ({ interviewId }) => {
         <br />
         <strong>Questions: </strong>{interview.questions.map((question, index) => {return (<li className={styles.questList}>{`${index + 1}. ${question} `}</li>)})}
         <strong>Notes: </strong>{interview.notes}
+        <hr />
+        <InterviewLinkList />
       </div>
     </div>
   );
