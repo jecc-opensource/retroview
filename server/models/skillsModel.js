@@ -20,9 +20,10 @@ class Skills {
     });
   }
 
-  async insertSkill({ name, question_prompt, answer, confidence }) {
-    const insertSkillQuery =
-      'INSERT INTO skills(name, question_prompt, answer, confidence) VALUES (?,?,?,?)';
+  async insertSkill({
+    name, question_prompt, answer, confidence,
+  }) {
+    const insertSkillQuery = 'INSERT INTO skills(name, question_prompt, answer, confidence) VALUES (?,?,?,?)';
     return new Promise((resolve, reject) => {
       this.database.run(
         insertSkillQuery,

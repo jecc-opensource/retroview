@@ -2,6 +2,7 @@ import styles from './InterviewBox.module.scss';
 import cn from 'classnames';
 import Link from 'next/link';
 
+
 const ClickBox = ({ label, confidence, onClick }) => {
   return (
     <button
@@ -18,6 +19,7 @@ const ClickBox = ({ label, confidence, onClick }) => {
 };
 
 const LinkBox = ({ label, confidence, href }) => {
+
   return (
     <Link href={href}>
       <button
