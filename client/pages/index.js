@@ -13,8 +13,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Retroview
+          Welcome to <span className={styles.primary}>Retroview</span>
         </h1>
+        <p className={styles.paragraph}>Iterating over interviews simplified</p>
 
         <div className={styles.grid}>
           <Link href="/interviews">
