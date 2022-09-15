@@ -23,7 +23,6 @@ graph TD;
   RS --> SU[["Update Skill By ID"]];
   RS --> SG[["Get Skill By ID"]];
   RS --> SGA[["Get All Skills"]];
-  RA --> RI{"Interviews Router"};
   RI --> IC[["Create Interview"]];
   RI --> ID[["Delete Interview By ID"]];
   RI --> IU[["Update Interview By ID"]];
