@@ -80,7 +80,7 @@ export const skillSlice = createSlice({
       state.interviewsLinked = action.payload;
     },
     addSkillList: (state, action) => {
-      state.skillList.push(action.payload)
+      state.skillList.push = action.payload
     }
   }
 })
