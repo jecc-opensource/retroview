@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
-const db = require('../models/fakeDbModel');
 const { createErr } = require('../utils/utils');
-const Interview = require('../models/interviewModel')
+const Interview = require('../models/interviewModel');
 
 const interviewsController = {};
 

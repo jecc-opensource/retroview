@@ -21,12 +21,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/api/interviews/",
+					"raw": "http://localhost:3000/api/interviews/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3001",
+					"port": "3000",
 					"path": [
 						"api",
 						"interviews",
@@ -54,12 +54,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/api/interviews/",
+					"raw": "http://localhost:3000/api/interviews/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3001",
+					"port": "3000",
 					"path": [
 						"api",
 						"interviews",
@@ -87,7 +87,40 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/api/skills/",
+					"raw": "http://localhost:3000/api/skills/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"skills",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/skills/1/links",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/skills/1/links",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -96,7 +129,166 @@
 					"path": [
 						"api",
 						"skills",
-						""
+						"1",
+						"links"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /api/skills/1/links",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"interview_id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/skills/1/links",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"skills",
+						"1",
+						"links"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL /api/skills/1/links",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"skill_id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/skills/1/links",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"skills",
+						"1",
+						"links"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/interviews/1/links",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/skills/1/links",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"skills",
+						"1",
+						"links"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /api/interviews/1/links",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"skill_id\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/interviews/1/links",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"interviews",
+						"1",
+						"links"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL /api/interviews/1/links",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"skill_id\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/interviews/1/links",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"interviews",
+						"1",
+						"links"
 					]
 				}
 			},
@@ -117,12 +309,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/api/skills/",
+					"raw": "http://localhost:3000/api/skills/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3001",
+					"port": "3000",
 					"path": [
 						"api",
 						"skills",
