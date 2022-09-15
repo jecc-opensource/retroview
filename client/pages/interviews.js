@@ -36,6 +36,14 @@ const Interviews = () => {
       [];
   });
 
+  useEffect(() => {
+    fetch('/api/interviews')
+    .then((data) => data.json())
+    .then((data) =>{
+      dispatch(addInterviewList(data))
+    })
+  },[dispatch])
+
   return (
     <>
       <h1 className={styles.title}>Interviews</h1>

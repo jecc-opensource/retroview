@@ -2,7 +2,7 @@ import SkillBox from '../components/SkillBox/SkillBox';
 import styles from '../styles/Home.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import SkillModal from '../components/SkillModal/SkillModal';
-import { renderModal, setSkillModal } from '../redux/slices/skillSlice';
+import { renderModal, setSkillModal,addSkillList } from '../redux/slices/skillSlice';
 import AddSkillButton from '../components/Buttons/addSkillButton';
 import InputSkillModal from '../components/InputSkillModal/InputSkillModal';
 import { useEffect, useState } from 'react';
@@ -14,6 +14,7 @@ const [database, setData] = useState([])
   const dispatch = useDispatch();
   const skillList = useSelector((state) => state.skill.skillList);
   const modalSkill = useSelector((state) => state.skill.modalSkill);
+
   const newArr = skillList.map((skill, index) => {
     return (
       <SkillBox
@@ -38,21 +39,28 @@ const databaseArray = database.map((skill,index)=> {
 })
 //fetching all skills
 /* This is a fetch request to the backend to get all the skills from the database. */
-  useEffect(()=>{
-fetch('/api/skills/', {
-  // //since fetching from other server must use cors and allow credentials
-  // mode: 'cors',
-  // headers: {
-  //   'Access-Control-Allow-Origin': '*',
-  //   'Access-Control-Allow-Credentials': true,
-  // },
-})
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data)
-  return setData(data)}),
-  [];
-},[])
+//   useEffect(()=>{
+// fetch('/api/skills/', {
+//   // //since fetching from other server must use cors and allow credentials
+//   // mode: 'cors',
+//   // headers: {
+//   //   'Access-Control-Allow-Origin': '*',
+//   //   'Access-Control-Allow-Credentials': true,
+//   // },
+// })
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data)
+//   return dispatch(addSkillList(data))
+// },[])
+
+useEffect(() => {
+  fetch('/api/skills')
+  .then((data) => data.json())
+  .then((data) =>{
+    dispatch(addSkillList(data))
+  })
+},[dispatch])
 
   return (
     <>
