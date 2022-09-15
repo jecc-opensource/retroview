@@ -25,7 +25,6 @@ const [database, setData] = useState([])
 
 //database JSX array
 const databaseArray = database.map((skill,index)=> {
-  console.log(skill.confidence);
   return (
     <SkillBox
       label={skill.name}
@@ -38,13 +37,13 @@ const databaseArray = database.map((skill,index)=> {
 //fetching all skills
 /* This is a fetch request to the backend to get all the skills from the database. */
   useEffect(()=>{
-fetch('http://localhost:3001/api/skills/', {
-  //since fetching from other server must use cors and allow credentials
-  mode: 'cors',
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials': true,
-  },
+fetch('/api/skills/', {
+  // //since fetching from other server must use cors and allow credentials
+  // mode: 'cors',
+  // headers: {
+  //   'Access-Control-Allow-Origin': '*',
+  //   'Access-Control-Allow-Credentials': true,
+  // },
 })
   .then((res) => res.json())
   .then((data) => {

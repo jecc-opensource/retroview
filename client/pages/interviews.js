@@ -20,12 +20,12 @@ const Interviews = () => {
   };
 //fetching all interviews
   useEffect(() => {
-    fetch('http://localhost:3001/api/interviews/', {
-      mode: 'cors',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true,
-      },
+    fetch('/api/interviews/', {
+      // mode: 'cors',
+      // headers: {
+      //   'Access-Control-Allow-Origin': '*',
+      //   'Access-Control-Allow-Credentials': true,
+      // },
     })
       .then((res) => res.json())
       .then((data) => console.log(data)),
