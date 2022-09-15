@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -16,15 +17,19 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <a href="/interviews" className={styles.card}>
-            <h2>Interviews </h2>
-            <p>View and add to your own list of interviews!</p>
-          </a>
+          <Link href="/interviews">
+            <a className={styles.card}>
+              <h2>Interviews </h2>
+              <p>View and add to your own list of interviews!</p>
+            </a>
+          </Link>
 
-          <a href="/skills" className={styles.card}>
-            <h2>Skills </h2>
-            <p>Continue honing those skills and turn those boxes green!</p>
-          </a>
+          <Link href="/skills">
+            <a className={styles.card}>
+              <h2>Skills </h2>
+              <p>Continue honing those skills and turn those boxes green!</p>
+            </a>
+          </Link>
         </div>
       </main>
 
