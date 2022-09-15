@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
+  modalSkill: null,
   newSkill: {
     name: 'Redux',
     question_prompt: 'Do you know what you are doing?',
@@ -30,8 +31,8 @@ const initialState = {
   },
   {
     id: 4,
-    name: 'SQL',
-    question_prompt: 'How have you used SQL in past projects?',
+    name: 'NoSQL',
+    question_prompt: 'How have you used NoSQL in past projects?',
     answer: '',
     confidence: 1,
   },
@@ -70,9 +71,12 @@ export const skillSlice = createSlice({
     //update notes related to question
     updateConfidence: (state, action) => {
       state.newSkill.confidence = action.payload;
+    },
+    renderModal: (state, action) => {
+      state.modalSkill = action.payload;
     }
   }
 })
 
-export const {updateName, addQuestion, addAnswer, updateConfidence} = skillSlice.actions;
+export const {updateName, addQuestion, addAnswer, updateConfidence, renderModal} = skillSlice.actions;
 export default skillSlice.reducer;
