@@ -21,8 +21,7 @@ const InterviewModal = ({ interviewId }) => {
         <br />
         <strong>Job Title: </strong>{interview.job_title}
         <br />
-        <strong>Tech Stack: </strong>{interview.tech_stack.map((tech, index) => {return `${index + 1}. ${tech} `})}
-        <br />
+        <strong>Tech Stack: </strong>{interview.tech_stack.map((tech, index) => {return (<li className={styles.techList}>{`${index + 1}. ${tech} `}</li>)})}
         <strong>Résumé: </strong>{interview.resume_version}
         <br />
         <strong>Questions: </strong>{interview.questions.map((question, index) => {return (<li className={styles.questList}>{`${index + 1}. ${question} `}</li>)})}

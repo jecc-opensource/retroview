@@ -24,3 +24,8 @@ a {
     background: black;
   }
 }
+
+::selection {
+  background: #5FFAA2;
+  color: #fff;
+}

@@ -39,8 +39,10 @@ const Interviews = () => {
     <h1 className={styles.title}>Interviews</h1>
     <button>Add Interview</button>
     <br></br>
-    <div className={styles.interviewContainer}>
-      {newArr}
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className={styles.interviewContainer}>
+        {newArr}
+      </div>
     </div>
     { modalInterview && <InterviewModal interviewId={modalInterview}/>}
     </>
