@@ -52,6 +52,14 @@ fetch('/api/skills/', {
   [];
 },[])
 
+useEffect(() => {
+  fetch('/api/skills')
+  .then((data) => data.json())
+  .then((data) =>{
+    dispatch(addSkillList(data))
+  })
+},[dispatch])
+
   return (
     <>
       <h1 className={styles.title}>Skills</h1>
