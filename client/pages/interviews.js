@@ -1,24 +1,26 @@
-import InterviewBox from '../components/InterviewBox/InterviewBox';
-import styles from '../styles/Home.module.scss';
-import Card from '../components/Card/Card';
+
+import InterviewBox from "../components/InterviewBox/InterviewBox";
+import styles from "../styles/Home.module.scss";
+import { useSelector, useDispatch } from 'react-redux';
+import InterviewModal from "../components/InterviewModal/InterviewModal";
+import { renderModal } from "../redux/slices/interviewSlice";
 import { useEffect,useState } from 'react';
 
 const Interviews = () => {
-  const interviewArray = ['Spotify', 'Meta', 'Amazon', 'Discord', 'Netflix'];
-  const newArr = interviewArray.map((interview) => {
+  const dispatch = useDispatch();
+  const interviewList = useSelector((state) => state.interview.interviewList);
+  const modalInterview = useSelector((state) => state.interview.modalInterview);
+  const newArr = interviewList.map((interview, index) => {
     return (
-      <InterviewBox
-        key={interview}
-        label={interview}
-        confidence={2}
-      ></InterviewBox>
-    );
-  });
-
-  const handleClick = (e) => {
-    console.log('clicked');
-  };
-//fetching all interviews
+      <InterviewBox 
+        label={interview.company} 
+        confidence={interview.interest_level}
+        key={`interviewBox-${index}`} 
+        onClick={() => dispatch(renderModal(interview.id))}
+      />
+    )
+  })
+  //fetching all interviews
   useEffect(() => {
     fetch('/api/interviews/', {
       // mode: 'cors',
@@ -34,11 +36,13 @@ const Interviews = () => {
 
   return (
     <>
-      <h1 className={styles.title}>Interviews</h1>
-      <button onClick={handleClick}>Add Interview</button>
-
-      <br></br>
-      <div className={styles.interviewContainer}>{newArr}</div>
+    <h1 className={styles.title}>Interviews</h1>
+    <button>Add Interview</button>
+    <br></br>
+    <div className={styles.interviewContainer}>
+      {newArr}
+    </div>
+    { modalInterview && <InterviewModal interviewId={modalInterview}/>}
     </>
   );
 };
