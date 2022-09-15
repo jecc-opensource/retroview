@@ -1,12 +1,13 @@
 /* eslint-disable camelcase */
 const db = require('../models/fakeDbModel');
 const { createErr } = require('../utils/utils');
+const Interview = require('../models/interviewModel')
 
 const interviewsController = {};
 
 interviewsController.getAllInterviews = async (req, res, next) => {
   try {
-    const dbRes = db.getAllInterviews();
+    const dbRes = await Interview.getAllInterviews();
     res.locals.interviews = dbRes;
   } catch (err) {
     return next(
@@ -54,7 +55,7 @@ interviewsController.createInterview = async (req, res, next) => {
   }
 
   try {
-    const dbRes = db.createInterview({
+    const dbRes = await Interview.insertInterview({
       interview_date,
       job_title,
       company,
