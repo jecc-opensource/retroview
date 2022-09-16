@@ -35,6 +35,38 @@ class Skills {
       );
     });
   }
+
+  async updateSkill({
+    name, question_prompt, answer, confidence, id,
+  }) {
+    const updateSkillQuery = 'UPDATE skills SET name = $name, question_prompt = $question_prompt, answer = $answer, confidence = $confidence WHERE id = $id';
+    return new Promise((resolve, reject) => {
+      this.database.run(
+        updateSkillQuery,
+        {
+          $id: id,
+          $name: name,
+          $question_prompt: question_prompt,
+          $answer: answer,
+          $confidence: confidence,
+        },
+        (err) => {
+          if (err) reject(err);
+          resolve();
+        },
+      );
+    });
+  }
+
+  async deleteSkill({ id }) {
+    const skillDeleteSQL = 'DELETE FROM skills WHERE id = ?';
+    return new Promise((resolve, reject) => {
+      this.database.run(skillDeleteSQL, id, (err) => {
+        if (err) reject(err);
+        resolve();
+      });
+    });
+  }
 }
 
 const Skill = new Skills(db);
