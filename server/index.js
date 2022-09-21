@@ -50,6 +50,6 @@ app.use((err, _req, res, _next) => {
 });
 
 // Fire it up
-app.listen(PORT, () => {
+module.exports = app.listen(PORT, () => {
   console.log(`Express Node server listening on ${PORT}`);
 });
